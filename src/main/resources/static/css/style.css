@@ -1,5 +1,5 @@
 body{
-    background-color: #a68233;
+    background-color: #cfab5f;
     font-family: sans-serif;
     cursor: pointer;
 
@@ -10,10 +10,9 @@ body{
 .rightNav{
     padding: 19px;
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
     align-content: center;
     margin: auto;
-    float: right;
 }
 
 .derecha {
@@ -113,7 +112,7 @@ body{
 .slider {
     display: flex;
     width: 400%;
-    height: 300px;
+    height: 450px;
     margin-left: -100%;
     position: relative;
 }
