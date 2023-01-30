@@ -1,8 +1,6 @@
 body{
     background-color: #cfab5f;
     font-family: sans-serif;
-    cursor: pointer;
-
 }
 
 /**************** MenuDerecha ****************/
@@ -48,7 +46,7 @@ body{
 }
 
 /**************** MenuIzquierda ****************/
-
+/*
 .menu i {
     margin-left: 10px;
     margin-top: 10px;
@@ -78,8 +76,9 @@ body{
     display: block;
     transition: .4s;
 }
-
+*/
 /**************** Navhover ****************/
+/*
 #leftMenu a:hover{
     background: #9C7E3F;
     color: white;
@@ -194,173 +193,117 @@ body{
     color: black;
 }
 
+/**************** productos  ****************/
 
-
-/* footer */
-
-/*                              footer{
-    background: #151515;
-    padding: 80px 0px;
+.cajas{
+    width: calc(32.93% - 40px);
+    margin: auto;
+    margin-top: 25px;
+    height: auto;
+    background: #DEDEDEFF;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+    float: left;
+    border-radius: 1rem;
 }
-
-footer .foo-row{
+.con-cajas{
     display: flex;
-    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
-footer .foo-row .foo-col{
-    width: 50%;
+.titulo{
+    padding-left: 10px;
 }
 
-footer .foo-row .foo-col:last-child{
-    margin-left: 50px;
+.precio{
+    padding-left: 10px;
 }
 
-footer .foo-row .foo-col:first-child{
-    margin-right: 50px;
-}
-
-footer .foo-row .foo-col h2{
-    color: #E3E3E3;
-    line-height: 40px;
-
-    font-size: 33px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-footer form .f-input{
-    width: 100%;
+.buttonp {
+    width: 8em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
     position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
 }
 
-footer form .f-input input{
-    width: 100%;
-    display: block;
-    padding: 16px 30px;
-    background: #2C2B2B;
-    border: none;
-    padding-right: 50px;
-    font-size: 15px;
-    border-radius: 25px;
-    outline: 0;
-    color: #A7A1A1;
-}
-
-footer form .f-input .hm-btn-round{
+.buttonp::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
     position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    border: none;
-    font-size: 18px;margin-right: 3px;
-    cursor: pointer;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #cfab5f 0%, #cc982b 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
 }
 
-
-footer .foo-row .foo-col ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.buttonp:hover::before {
+    width: 9em;
 }
 
-footer .foo-row .foo-col ul li{
-    width: 50%;
-    margin-bottom: 16px;
+.buttonp:hover {
+    animation: rotate624 0.7s ease-in-out both;
 }
 
-footer .foo-row .foo-col ul li a{
-    color: #E3E3E3;
-    font-size: 15px;
+.buttonp:hover span {
+    animation: storm1261 0.7s ease-in-out both;
+    animation-delay: 0.06s;
 }
 
-footer .foo-row .foo-col ul li a:hover{
-    color: black;
-    text-decoration: underline;
-}
+@keyframes rotate624 {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
 
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
 
-.foo-copy{
-    background: #000000;
-    padding: 40px 0px;
-}
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
 
-.foo-copy p{
-    text-align: center;
-    color: #E3E3E3;
-    font-size: 14px;
-    font-weight: 300;
-}
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
 
-
-                                            */
-/*=================================
-    ESTILOS: RESPOIVE
-==================================*/
-/*
-@media screen and (max-width: 1024px){
-    .grid-product{
-        grid-template-columns: repeat(3,calc(33.33% - 2rem*2/3));
-        column-gap: 2rem;
-        row-gap: 2rem;
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
     }
 }
 
-.hm-header .icon-menu{
-    display: none;
-}
-
-@media screen and (max-width: 800px) {
-    .hm-banner {
-        height: 400px;
-        min-height: 400px;
+@keyframes storm1261 {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
     }
 
-    .hm-grid-category,
-    .grid-product {
-        grid-template-columns: repeat(2, calc(50% - 2rem * 1 / 2));
-        column-gap: 2rem;
-        row-gap: 2rem;
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
     }
 
-    .hm-header .hm-menu ul {
-        display: none;
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
     }
 
-    .hm-header .icon-menu {
-        display: block;
-        margin-left: 20px;
-
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
     }
 
-    .hm-header .icon-menu button {
-        background: transparent;
-        border: none;
-        font-size: 22px;
-        color: black;
-    }
-
-    footer .foo-row {
-        flex-direction: column;
-    }
-
-    footer .foo-row .foo-col {
-        width: 100%;
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-    }
-
-    footer .foo-row .foo-col ul {
-        display: none;
-    }
-
-    .hm-tabs .hm-tab-link {
-        margin: 0px 10px;
-        margin-bottom: 10px;
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
     }
 }
-
-        */
