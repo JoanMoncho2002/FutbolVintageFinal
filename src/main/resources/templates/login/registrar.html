@@ -16,25 +16,40 @@
 
 </header>
 
-<h1>Inicio de Sesion</h1>
+<h1>Registrate</h1>
 
 <div class="grid">
   <form action="#" method="#" class="form login">
     <div class="form__field">
-      <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg>
+      <label for="login__username">
+        <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg>
         <span class="hidden">Username</span></label>
-      <input id="login__username" type="text" name="username" class="form__input" placeholder="Nombre de Usuario" required>
+      <input id="login__username" type="text" name="username" class="form__input" placeholder="Nombre" required>
+    </div>
+    <div class="form__field">
+      <label for="login__username">
+        <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg>
+        <span class="hidden">Username</span></label>
+      <input id="login__correo" type="text" name="username" class="form__input" placeholder="Correo Electronico" required>
     </div>
     <div class="form__field">
       <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg>
         <span class="hidden">Password</span></label>
-      <input id="login__password" type="password" name="password" class="form__input" placeholder="Contraseña" required>
+      <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
     </div>
+
     <div class="form__field">
-      <input type="submit" value="Iniciar Sesion">
+      <input type="submit" value="Registrar">
     </div>
+
+    <div th:if${param.exito}>
+      <div class="alert alert-info">
+        Se ha registrado exitosamente a la aplicacion.
+      </div>
+    </div>
+
   </form>
-  <p class="text--center">Si no estas registrado todavia <a href="/registrar">Registrate aqui</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
+  <p class="text--center">Si ya estas registrado <a href="/login">Inicia Sesion aqui.</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
 </div>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="icons">
