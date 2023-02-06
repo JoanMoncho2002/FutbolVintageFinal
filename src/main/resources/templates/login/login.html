@@ -9,32 +9,46 @@
 </head>
 
 <body class="align">
-<header>
-
-  <!-- <a href="../index.html">X</a>  PONER UNA FLECHA PARA VOLVER A LA PRINCIPAL -->
-
-
-</header>
 
 <h1>Inicio de Sesion</h1>
 
+<div th:if="${param.error}">
+  <div class="alert alert-danger">Usuario o Contraseña incorrectas</div>
+</div>
+<div th:if="${param.logout}">
+  <div class="alert alert-success"> Has cerrado sesion.</div>
+</div>
+
 <div class="grid">
-  <form action="#" method="#" class="form login">
+  <form method="post" role="form" th:action="@{/login}" class="form login">
     <div class="form__field">
-      <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg>
-        <span class="hidden">Username</span></label>
+      <label for="login__username">
+        <svg class="icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
+      </svg>
+        <span class="hidden">Username</span>
+      </label>
       <input id="login__username" type="text" name="username" class="form__input" placeholder="Nombre de Usuario" required>
     </div>
     <div class="form__field">
-      <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg>
-        <span class="hidden">Password</span></label>
+      <label for="login__password">
+        <svg class="icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
+      </svg>
+        <span class="hidden">Password</span>
+      </label>
       <input id="login__password" type="password" name="password" class="form__input" placeholder="Contraseña" required>
     </div>
     <div class="form__field">
       <input type="submit" value="Iniciar Sesion">
     </div>
   </form>
-  <p class="text--center">Si no estas registrado todavia <a href="/registrar">Registrate aqui</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
+  <p class="text--center">Si no estas registrado todavia
+    <a th:href="@{/registrar}">Registrate aqui</a>
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use>
+    </svg>
+  </p>
 </div>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="icons">
