@@ -13,7 +13,9 @@
 <h1>Registrate</h1>
 
 <div class="grid">
-  <form method="post" role="form" th:action="@{/register/save}" th:object="${user}" class="form login">
+
+  <form id="registerform" th:action="@{/process_register}" th:object="${user}" method="POST" role="form" class="form login">
+
     <div class="form__field">
       <label for="login__username">
         <svg class="icon">
