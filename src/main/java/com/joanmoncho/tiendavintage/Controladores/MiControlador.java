@@ -19,4 +19,9 @@ public class MiControlador {
         return "/login/registrar";
     }
 
+    @GetMapping("/cesta")
+    public String cesta(){
+        return "/cesta/cesta";
+    }
+
 }
