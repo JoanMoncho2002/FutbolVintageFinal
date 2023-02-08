@@ -1,6 +1,6 @@
 package com.joanmoncho.tiendavintage.Servicio;
 
-import com.joanmoncho.tiendavintage.Modelo.UserModel;
+import com.joanmoncho.tiendavintage.Modelo.UsuarioEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,9 +8,9 @@ import java.util.Collection;
 
 public class UserDetailsImpl implements UserDetails {
 
-    private UserModel user;
+    private UsuarioEntity user;
 
-    public UserDetailsImpl(UserModel user) {
+    public UserDetailsImpl(UsuarioEntity user) {
         this.user = user;
     }
 

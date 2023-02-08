@@ -38,7 +38,7 @@ public class ConfigSeguridad {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
-                .requestMatchers("/user").authenticated()
+                .requestMatchers("/usuario").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()

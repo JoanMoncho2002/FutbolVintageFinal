@@ -1,16 +1,13 @@
 package com.joanmoncho.tiendavintage.Controladores;
 
+import com.joanmoncho.tiendavintage.Modelo.UsuarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.joanmoncho.tiendavintage.Repositorio.IUserRepository;
-import com.joanmoncho.tiendavintage.Modelo.UserModel;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MiControlador {
@@ -20,30 +17,34 @@ public class MiControlador {
 
     @GetMapping({"/login"})
     public String goToLogin(Model model){
-        return "login";
-    }
-
-    //PUBLIC                                *
-    @GetMapping({"/","index"})
-    public String index(){
-        return "index";
+        return "/login/login";
     }
 
     //REGISTER                                *
 
-    @GetMapping({"/register"})
+    @GetMapping({"/registrar"})
     public String goToregister(Model model){
-        model.addAttribute("user", new UserModel());
-        return "register";
+        model.addAttribute("usuario", new UsuarioEntity());
+        return "/login/registrar";
     }
-    @PostMapping("/process_register")
-    public String processRegister(UserModel user) {
+    @PostMapping("/processregister")
+    public String processRegister(UsuarioEntity usuario) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode(user.getPassword());
-        user.setPassword(encodedPassword);
-        iUserRepository.save(user);
+        String encodedPassword = passwordEncoder.encode(usuario.getPassword());
+        usuario.setPassword(encodedPassword);
+        iUserRepository.save(usuario);
         return "index";
     }
+
+    @PostMapping("/usuario")
+    public String usuario() {
+        return "index";
+    }
+
+    /*@ModelAttribute("usuario")
+    public UserModel user() {
+        return new UserModel();
+    }*/
 
     //ANTIGUO
     /* @GetMapping("/index")

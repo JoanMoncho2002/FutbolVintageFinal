@@ -73,7 +73,7 @@ html {
 
 body {
     background-color: #a68233;
-    color: #606468;
+    color: #2b2b2e;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-size: 0.875rem;
@@ -87,7 +87,7 @@ body {
 /* modules/anchor.css */
 
 a {
-    color: #606468;
+    color: #2b2b2e;
     outline: 0;
     text-decoration: none;
     font-weight: bold;
@@ -182,7 +182,7 @@ input[type='submit'] {
 
 .login input[type='submit'] {
     background-color: #cfab5f;
-    color: #606468;
+    color: #2b2b2e;
     font-weight: 700;
     text-transform: uppercase;
 }
